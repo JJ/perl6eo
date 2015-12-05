@@ -1,0 +1,15 @@
+#!/usr/bin/env perl6
+
+
+my Int $len = 16;
+my $maxlen = 32768;
+my $how-many =10e5;
+unless $len > $maxlen {
+    my $now = now;
+    for ( 1..$how-many ) {
+	my @ones = map( { rand >= 0.5 ?? True !! False }, 1..$len );
+	my $maxones = reduce { $^b + $^a }, 0, |@ones;
+    }
+    my $time = time;
+    say "perl6-BitVector,$len,",$now.Int - $time;
+}
