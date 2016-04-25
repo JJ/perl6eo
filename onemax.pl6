@@ -9,6 +9,7 @@ while $len < $maxlen {
     for 1..$how-many  {
 	my @ones = map( { rand >= 0.5 ?? True !! False }, 1..$len );
 	my $maxones = reduce { $^b + $^a }, 0, |@ones;
+#	say $maxones;
     }
     say "perl6-BitVector,$len,",time.Int - $start;
     $len = $len*2;
