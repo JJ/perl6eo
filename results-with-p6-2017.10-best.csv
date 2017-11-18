@@ -1,0 +1,11 @@
+perl6-BitVector,16,0.67287915
+perl6-BitVector,32,1.0034837
+perl6-BitVector,64,1.7318712
+perl6-BitVector,128,3.2038051
+perl6-BitVector,256,6.3108475
+perl6-BitVector,512,11.9162371
+perl6-BitVector,1024,23.4248744
+perl6-BitVector,2048,47.2232985
+perl6-BitVector,4096,93.49895800
+perl6-BitVector,8192,185.8052954
+perl6-BitVector,16384,372.965959
