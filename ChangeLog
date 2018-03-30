@@ -1,0 +1,4 @@
+2018-03-30  Juan J. merelo  <jmerelo@penny>
+
+	* onemax-hyper.p6: Testing with parallel evaluation, results are not too good. Even with batch size reset. Simply not worth the while for small arrays. 
+

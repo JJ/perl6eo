@@ -9,7 +9,7 @@ while $len < $maxlen {
     my $start = now;
     for 1..$how-many  {
 	my $ones = Bool.roll xx $len ;
-	my $maxones = $ones.sum;	
+	my $maxones = $ones.hyper.sum;	
     }
     say "perl6-BitVector,$len,",now - $start;
     $len = $len*2;
