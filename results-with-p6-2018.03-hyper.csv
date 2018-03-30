@@ -1,0 +1,10 @@
+perl6-BitVector-hyper,16,1.01228898
+perl6-BitVector-hyper,32,1.2492753
+perl6-BitVector-hyper,64,2.008398
+perl6-BitVector-hyper,128,3.3632440
+perl6-BitVector-hyper,256,5.8023960
+perl6-BitVector-hyper,512,10.3807145
+perl6-BitVector-hyper,1024,11.89698372
+perl6-BitVector-hyper,2048,21.46340416
+perl6-BitVector-hyper,4096,42.51300491
+perl6-BitVector-hyper,8192,85.94092882
