@@ -8,7 +8,7 @@ my $how-many = 100000;
 while $len <= $maxlen {
     my $start = now;
     for 1..$how-many  {
-	my $ones = (0..1).roll( $len );
+	my $ones = (Bool.roll.Int xx $len);
 	my $maxones = $ones.sum;	
     }
     say "perl6-BitVector,$len,",now - $start;
