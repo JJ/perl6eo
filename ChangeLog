@@ -1,5 +1,7 @@
 2018-03-31  Juan J. merelo  <jmerelo@penny>
 
+	* onemax-hyper.p6: Changes to race.
+
 	* onemax-Int.p6: Adds int array, which is way much slower than Bool for some reason. 
 
 2018-03-30  Juan J. merelo  <jmerelo@penny>
