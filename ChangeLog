@@ -1,5 +1,7 @@
 2018-03-31  Juan J. merelo  <jmerelo@penny>
 
+	* xover-string.p6: Testing with strings. Looks a bit faster, still slower than most.
+
 	* onemax-hyper.p6: Changes to race.
 
 	* onemax-Int.p6: Adds int array, which is way much slower than Bool for some reason. 
