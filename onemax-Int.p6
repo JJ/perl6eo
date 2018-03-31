@@ -8,9 +8,9 @@ my $how-many = 100000;
 while $len <= $maxlen {
     my $start = now;
     for 1..$how-many  {
-	my $ones = (Bool.roll.Int xx $len);
+	my $ones = +Bool.roll xx $len;
 	my $maxones = $ones.sum;	
     }
-    say "perl6-BitVector,$len,",now - $start;
+    say "perl6-IntVector,$len,",now - $start;
     $len = $len*2;
 }
