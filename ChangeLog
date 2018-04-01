@@ -1,3 +1,10 @@
+2018-04-01  Juan J. merelo  <jmerelo@penny>
+
+	* royal-road-race.p6: Same, but using implicitly parallel race.
+	Put the race at the beginning.
+
+	* royal-road.p6: Teste royal road for Perl 6 and comparing it with Perl.
+
 2018-03-31  Juan J. merelo  <jmerelo@penny>
 
 	* xover-string.p6: Testing with strings. Looks a bit faster, still slower than most.
