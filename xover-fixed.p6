@@ -10,9 +10,8 @@ while $len <= $maxlen {
 	my $this-len = 1+($len-$start-2).rand.Int;
 	my @chromosome1[$len] = Bool.roll xx $len;
 	my @chromosome2[$len] = Bool.roll xx $len;
-#	say flat @chromosome2.head($start), @chromosome1.skip($start).head($this-len), @chromosome2.tail($len-$this-len-$start);
-	my @out1[$len] = flat @chromosome2.head($start), @chromosome1.skip($start).head($this-len), @chromosome2.tail($len-$this-len-$start);
-	my @out2[$len] = flat @chromosome1.head($start), @chromosome2.skip($start).head($this-len), @chromosome1.tail($len-$this-len-$start);
+	my @out1 = Array.new( @chromosome2.head($start)).append(@chromosome1.skip($start).head($this-len)).append( @chromosome2.tail($len-$this-len-$start));
+	my @out2 = Array.new( @chromosome1.head($start)).append(@chromosome2.skip($start).head($this-len)).append( @chromosome1.tail($len-$this-len-$start));
     }
     say "perl6-BitVector,$len,",now - $start;
     $len = $len*2;
