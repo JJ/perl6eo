@@ -11,8 +11,8 @@ while $len <= $maxlen {
 	my @chromosome1 = Bool.roll xx $len;
 	my @chromosome2 = Bool.roll xx $len;
 	my @x-chromosome = @chromosome2;
-	@chromosome2.splice($start,$this-len, @chromosome1[$start..($start+$this-len)]);
-	@chromosome1.splice($start,$this-len, @x-chromosome[$start..($start+$this-len)])
+	@chromosome2.splice($start,$this-len, @chromosome1.skip($start).head($this-len));
+	@chromosome1.splice($start,$this-len, @x-chromosome.skip($start).head($this-len))
     }
     say "perl6-BitVector,$len,",now - $start;
     $len = $len*2;
