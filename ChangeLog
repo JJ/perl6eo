@@ -2,6 +2,7 @@
 
 	* royal-road-race.p6: Same, but using implicitly parallel race.
 	Put the race at the beginning.
+	Let's try to have the parallel version kick in only when it's needed. And reduce by 10 the number of iterations.
 
 	* royal-road.p6: Teste royal road for Perl 6 and comparing it with Perl.
 
