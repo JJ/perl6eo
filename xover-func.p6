@@ -9,16 +9,11 @@ while $len <= $maxlen {
 	my @points = (^$len).pick(2).sort;
 	my @chromosome1 = Bool.roll xx $len;
 	my @chromosome2 = Bool.roll xx $len;
-	my @out1;
-	my @out2;
-	for ^$len -> $i {
-	    if ( @points[0] <= $i < @points[1] )  {
-		@out2[$i], @chromosome1[$i];
-		@out1[$i], @chromosome2[$i];
-	    } else {
-		@out1[$i], @chromosome1[$i];
-		@out2[$i], @chromosome2[$i];
-	    }
+	my @out1 = @chromosome1;
+	my @out2 = @chromosome2;
+	for @points[0]..^@points[1] -> $i {
+	    @out2[$i] = @chromosome1[$i];
+	    @out1[$i] = @chromosome2[$i];
 	}
     }
     say "perl6-BitVector,$len,",now - $start;
