@@ -12,12 +12,12 @@ while $len <= $maxlen {
 	my @out1;
 	my @out2;
 	for ^$len -> $i {
-	    if (  @points[0] <= $i < @points[1] )  {
-		push @out2, @chromosome1[$i];
-		push @out1, @chromosome2[$i];
+	    if ( @points[0] <= $i < @points[1] )  {
+		@out2[$i], @chromosome1[$i];
+		@out1[$i], @chromosome2[$i];
 	    } else {
-		push @out1, @chromosome1[$i];
-		push @out2, @chromosome2[$i];
+		@out1[$i], @chromosome1[$i];
+		@out2[$i], @chromosome2[$i];
 	    }
 	}
     }
