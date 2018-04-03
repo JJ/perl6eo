@@ -8,8 +8,8 @@ while $len <= $maxlen {
     for 1..$how-many  {
 	my $start = ($len -2 ).rand.Int;
 	my $this-len = 1+($len-$start-2).rand.Int;
-	my @chromosome1 = Bool.roll xx $len;
-	my @chromosome2 = Bool.roll xx $len;
+	my @chromosome1 = Bool.roll($len);
+	my @chromosome2 = Bool.roll($len);
 	my @out1 = Array.new( @chromosome2.head($start)).append(@chromosome1.skip($start).head($this-len)).append( @chromosome2.tail($len-$this-len-$start));
 	my @out2 = Array.new( @chromosome1.head($start)).append(@chromosome2.skip($start).head($this-len)).append( @chromosome1.tail($len-$this-len-$start));
     }
