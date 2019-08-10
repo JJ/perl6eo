@@ -1,22 +1,26 @@
 #!/usr/bin/env perl6
 
-sub xover( @chromosome1 is copy, @chromosome2 is copy ) {
-    my @x-chromosome = @chromosome2;
-    my $len = @x-chromosome.elems;
+sub xover( @chromosome1, @chromosome2 ) {
+    my $len = @chromosome1.elems;
     my $start = ($len -2 ).rand.Int;
     my $this-len = ($len-$start).rand.Int;
-    @chromosome2.splice($start,$this-len, @chromosome1.skip($start).head($this-len));
-    @chromosome1.splice($start,$this-len, @x-chromosome.skip($start).head($this-len));
-    return (@chromosome1, @chromosome2).Slip;
+    return (@chromosome2.head($start), @chromosome1.skip($start).head($this-len),
+	 @chromosome2.tail( $len - $this-len - $start  )).flat,
+	(@chromosome1.head($start), @chromosome2.skip($start).head($this-len),
+	 @chromosome1.tail( $len - $this-len - $start  )).flat;
 }
 
 my Int $len = 16;
 my $maxlen = 32768;
 my $how-many =100000;
+my @A = ^16 Z~ ("A" xx 16);
+my @b = ^16 Z~ ("b" xx 16);
 while $len <= $maxlen {
     my $start = now;
+    my @chromosome1 = Bool.roll($len);
+    my @chromosome2 = Bool.roll($len);
     for 1..$how-many  {
-	xover(Bool.roll($len), Bool.roll($len) );
+	my ($elem1, $elem2) = xover(@chromosome1, @chromosome2 );
     }
     say "perl6-BitVector,$len,",now - $start;
     $len = $len*2;
