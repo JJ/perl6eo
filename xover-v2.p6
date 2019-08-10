@@ -17,8 +17,6 @@ my $how-many =100000;
 while $len <= $maxlen {
     my $start = now;
     for 1..$how-many  {
-	my $start = ($len -2 ).rand.Int;
-	my $this-len = ($len-$start).rand.Int;
 	xover( Bool.roll($len), Bool.roll($len));
     }
     say "perl6-BitVector-xover-v2,$len,",now - $start;
