@@ -17,8 +17,8 @@ my @A = ^16 Z~ ("A" xx 16);
 my @b = ^16 Z~ ("b" xx 16);
 while $len <= $maxlen {
     my $start = now;
-    my @chromosome1 = Bool.roll($len);
-    my @chromosome2 = Bool.roll($len);
+    my @chromosome1 := Bool.roll($len).list;
+    my @chromosome2 := Bool.roll($len).list;
     for 1..$how-many  {
 	my ($elem1, $elem2) = xover(@chromosome1, @chromosome2 );
     }
