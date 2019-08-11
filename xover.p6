@@ -13,8 +13,6 @@ sub xover( @chromosome1, @chromosome2 ) {
 my Int $len = 16;
 my $maxlen = 32768;
 my $how-many =100000;
-my @A = ^16 Z~ ("A" xx 16);
-my @b = ^16 Z~ ("b" xx 16);
 while $len <= $maxlen {
     my $start = now;
     my @chromosome1 := Bool.roll($len).list;
