@@ -1,9 +1,9 @@
 #!/usr/bin/env perl6
 
 sub xover( @chromosome1, @chromosome2 ) {
-    my $len = @chromosome1.elems;
-    my $start = ($len -2 ).rand.Int;
-    my $this-len = ($len-$start).rand.Int;
+    my $len := @chromosome1.elems;
+    my $start := ($len -2 ).rand.Int;
+    my $this-len := ($len-$start).rand.Int;
     return (@chromosome2.head($start), @chromosome1.skip($start).head($this-len),
 	 @chromosome2.tail( $len - $this-len - $start  )).flat,
 	(@chromosome1.head($start), @chromosome2.skip($start).head($this-len),
